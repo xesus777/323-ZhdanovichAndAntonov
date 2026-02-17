@@ -8,7 +8,88 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page1">
 
-    <Grid>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+       
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" Padding="5" Margin="0,0,0,10">
+            <StackPanel>
+                <TextBlock Text="Функция 1:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Image Source="/Images/primer1.png" Height="150" Stretch="Uniform"/>
+                <TextBlock Text="w = |cos x - cos y|^(1+2sin²y) · (1 + z + z²/2 + z³/3 + z⁴/4)" 
+                           TextWrapping="Wrap" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+
         
+        <StackPanel Grid.Row="1" Margin="0,0,0,10">
+            <GroupBox Header="Входные данные" Padding="10">
+                <StackPanel>
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="x:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBox x:Name="txtX" Grid.Row="0" Grid.Column="1" Width="200" HorizontalAlignment="Left" 
+                                 ToolTip="Введите значение x"/>
+                        
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="y:" VerticalAlignment="Center" Margin="0,10,10,0"/>
+                        <TextBox x:Name="txtY" Grid.Row="1" Grid.Column="1" Width="200" HorizontalAlignment="Left" 
+                                 ToolTip="Введите значение y" Margin="0,10,0,0"/>
+                        
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="z:" VerticalAlignment="Center" Margin="0,10,10,0"/>
+                        <TextBox x:Name="txtZ" Grid.Row="2" Grid.Column="1" Width="200" HorizontalAlignment="Left" 
+                                 ToolTip="Введите значение z" Margin="0,10,0,0"/>
+                        
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Row="2" VerticalAlignment="Top">
+            <GroupBox Header="Результат" Padding="10" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="w =" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtResult" IsReadOnly="True" Background="#FFF0F0F0" 
+                             ToolTip="Результат вычислений"/>
+                </StackPanel>
+            </GroupBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnCalculate" Content="Вычислить" Width="100" Height="30" Margin="5" 
+                        Click="btnCalculate_Click" ToolTip="Вычислить значение функции">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FF4CAF50" Offset="0"/>
+                            <GradientStop Color="#FF45A049" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnClear" Content="Очистить" Width="100" Height="30" Margin="5" 
+                        Click="btnClear_Click" ToolTip="Очистить все поля">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF44336" Offset="0"/>
+                            <GradientStop Color="#FFD32F2F" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

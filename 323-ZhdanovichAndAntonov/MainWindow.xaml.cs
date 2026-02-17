@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _323_ZhdanovichAndAntonov.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,42 @@ using System.Windows.Shapes;
 
 namespace _323_ZhdanovichAndAntonov
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Page1());
+        }
+
+        private void Page1_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Page1());
+        }
+
+        private void Page2_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Page2());
+        }
+
+        private void Page3_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Page3());
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var result = MessageBox.Show("Вы действительно хотите выйти?",
+                "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

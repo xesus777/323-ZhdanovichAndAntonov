@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_323_ZhdanovichAndAntonov"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Closing="Window_Closing">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Menu Grid.Row="0" Background="LightGray">
+            <MenuItem Header="Страницы">
+                <MenuItem Header="Страница 1" Click="Page1_Click"/>
+                <MenuItem Header="Страница 2" Click="Page2_Click"/>
+                <MenuItem Header="Страница 3" Click="Page3_Click"/>
+            </MenuItem>
+            <MenuItem Header="Выход" Click="Exit_Click"/>
+        </Menu>
+
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
