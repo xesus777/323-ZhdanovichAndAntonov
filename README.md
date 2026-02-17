@@ -14,13 +14,13 @@
 ## Вариант задания
 
 ### Функция 1
-![Функция 1](Images/primer1.png)
+
 w = |cos x - cos y|^(1+2sin²y) · (1 + z + z²/2 + z³/3 + z⁴/4)
 
 text
 
 ### Функция 2
-![Функция 2](Images/primer2.png)
+
 d = { (f(x)-y)³ + arctg(f(x)), x > y;
 (y-f(x))³ + arctg(f(x)), y > x;
 (y+f(x))³ + 0.5, y = x }
@@ -32,7 +32,7 @@ text
 - e^x - экспонента
 
 ### Функция 3
-![Функция 3](Images/primer3.png)
+
 y = ax³ + cos²(x³ - b)
 
 text
