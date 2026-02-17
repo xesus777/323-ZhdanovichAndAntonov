@@ -4,9 +4,161 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_323_ZhdanovichAndAntonov.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page3">
+      
+      xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
+      mc:Ignorable="d"
+      Title="Page3" Height="682" Width="887">
 
-    
+
+
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="#CCCCCC" BorderThickness="1" Padding="8" Margin="0,0,0,8" CornerRadius="4" Background="#F9F9F9">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,15,0">
+                    <Image Source="/Images/primer3.png" Height="150" Stretch="Uniform" Margin="0,0,8,0"/>
+                    
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" >
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" Padding="3" Margin="2,0" CornerRadius="3" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="a:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,3,0"/>
+                            <TextBox x:Name="txtA" Text="1,35" Width="300" Padding="2" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" Padding="3" Margin="2,0" CornerRadius="3" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="b:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,3,0"/>
+                            <TextBox x:Name="txtB" Text="-6,25" Width="300" Padding="2" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" Padding="3" Margin="2,0" CornerRadius="3" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="x₀:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,3,0"/>
+                            <TextBox x:Name="txtX0" Text="-1,5" Width="300" Padding="2" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" Padding="3" Margin="2,0" CornerRadius="3" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="xₖ:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,3,0"/>
+                            <TextBox x:Name="txtXk" Text="10,3" Width="300" Padding="2" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" Padding="3" Margin="2,0" CornerRadius="3" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="dx:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,3,0"/>
+                            <TextBox x:Name="txtDx" Text="0,25" Width="300" Padding="2" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Background="#E6F0FA">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="x" FontWeight="Bold" HorizontalAlignment="Center" Padding="5"/>
+                        <TextBlock Grid.Column="1" Text="y" FontWeight="Bold" HorizontalAlignment="Center" Padding="5"/>
+                    </Grid>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" MaxHeight="380">
+                        <ItemsControl x:Name="ResultsList">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" BorderBrush="#EEEEEE" BorderThickness="0,0,1,1" Padding="5">
+                                            <TextBlock Text="{Binding X, StringFormat={}{0:F3}}" 
+                                                       HorizontalAlignment="Center" FontFamily="Consolas" FontSize="11"/>
+                                        </Border>
+                                        <Border Grid.Column="1" BorderBrush="#EEEEEE" BorderThickness="0,0,0,1" Padding="5">
+                                            <TextBlock Text="{Binding Y, StringFormat={}{0:F4}}" 
+                                                       HorizontalAlignment="Center" FontFamily="Consolas" FontSize="11"/>
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="1"/>
+
+            <Border Grid.Column="2" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Background="White" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="График функции" FontWeight="Bold" FontSize="12" 
+                               HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                    <Border Grid.Row="1" BorderBrush="#CCCCCC" BorderThickness="1" Background="White" Height="380">
+                        <charting:Chart x:Name="MainChart" Background="White">
+                            <charting:Chart.Series>
+                                <charting:LineSeries x:Name="FunctionSeries" 
+                                                     IndependentValuePath="X" 
+                                                     DependentValuePath="Y"
+                                                     Title="y = ax³ + cos²(x³ - b)"
+                                                     Background="Blue"
+                                                     BorderBrush="Blue"
+                                                     />
+                            </charting:Chart.Series>
+                        </charting:Chart>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2" BorderBrush="#CCCCCC" BorderThickness="1" Padding="8" CornerRadius="4" Background="#F9F9F9">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnCalculate" Content="ВЫЧИСЛИТЬ" Width="120" Height="32" Margin="5" 
+                        Click="btnCalculate_Click" ToolTip="Вычислить значения функции"
+                        Background="#4CAF50" Foreground="White" FontWeight="Bold" FontSize="11"
+                        BorderThickness="0" Cursor="Hand"/>
+                <Button x:Name="btnClear" Content="ОЧИСТИТЬ" Width="120" Height="32" Margin="5" 
+                        Click="btnClear_Click" ToolTip="Очистить все поля"
+                        Background="#F44336" Foreground="White" FontWeight="Bold" FontSize="11"
+                        BorderThickness="0" Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+
+
 </Page>
