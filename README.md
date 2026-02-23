@@ -111,6 +111,7 @@ LiveCharts.Wpf - 0.9.7 - Визуализация данных в реально
 ├── 323_ZhdanovichAndAntonov.sln
 ├── .gitignore
 └── README.md
+
 Руководство пользователя
 Страница 1 — Расчет параметра w
 
