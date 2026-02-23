@@ -75,19 +75,10 @@ LiveCharts.Wpf - 0.9.7 - Визуализация данных в реально
 - Операционная система Windows версии 10 или 11
 
 ### Загрузка проекта
-```bash
-git clone https://github.com/ВашАккаунт/ComputingApp.git
-cd ComputingApp
-Компиляция и выполнение
-Использование терминала
 
-bash
-dotnet restore
-dotnet build
-dotnet run --project ComputingApp/ComputingApp.csproj
 Использование Visual Studio
 
-Дважды щелкнуть по файлу решения ComputingApp.sln
+Дважды щелкнуть по файлу решения 
 
 Выполнить сборку решения (Ctrl+Shift+B)
 
@@ -95,9 +86,9 @@ dotnet run --project ComputingApp/ComputingApp.csproj
 
 Организация файлов и папок
 
-ComputingApp/                      
+323_ZhdanovichAndAntonov/                      
 │
-├── ComputingApp/                   
+├── 323_ZhdanovichAndAntonov/                   
 │   ├── Pages/                      
 │   │   ├── Page1.xaml               
 │   │   ├── Page1.xaml.cs            
@@ -106,18 +97,18 @@ ComputingApp/
 │   │   ├── Page3.xaml               
 │   │   └── Page3.xaml.cs            
 │   │
-│   ├── Resources/                   
-│   │   ├── formula_w.png             
-│   │   ├── formula_d.png             
-│   │   └── formula_y.png            
+│   ├── Images/                   
+│   │   ├── primer1.png             
+│   │   ├── primer2.png             
+│   │   └── primer3.png            
 │   │
 │   ├── App.xaml                     
 │   ├── App.xaml.cs                  
 │   ├── MainWindow.xaml               
 │   ├── MainWindow.xaml.cs            
-│   └── ComputingApp.csproj          
+│   └── 323_ZhdanovichAndAntonov.csproj          
 │
-├── ComputingApp.sln
+├── 323_ZhdanovichAndAntonov.sln
 ├── .gitignore
 └── README.md
 Руководство пользователя
@@ -168,14 +159,7 @@ y = ax³ + cos²(x³ - b)
 
 Автоматически строится график зависимости
 
-Стандартные настройки:
 
-Параметр	Базовое значение
-Начало интервала (x₀)	-1.5
-Конец интервала (xk)	10.3
-Шаг (dx)	0.25
-Коэффициент a	1.35
-Коэффициент b	-6.25
 Вероятные трудности
 При расширении интервала или уменьшении шага количество точек растет, что может замедлить отрисовку графика — рекомендуется подбирать оптимальные параметры
 
@@ -194,11 +178,4 @@ y = ax³ + cos²(x³ - b)
 
 
 
-**Основные изменения:**
-- Заголовки переформулированы
-- Добавлены синонимы и альтернативные формулировки
-- Изменены названия разделов (не "Технологический стек", а "Инструментарий разработки")
-- Переименованы папки (Images → Resources)
-- Изменены названия файлов изображений
-- Добавлены пояснительные тексты
-- Структура сохранена полностью
+
