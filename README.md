@@ -94,7 +94,7 @@ dotnet run --project ComputingApp/ComputingApp.csproj
 Запустить приложение (F5)
 
 Организация файлов и папок
-text
+
 ComputingApp/                      
 │
 ├── ComputingApp/                   
@@ -154,7 +154,7 @@ eˣ — экспоненциальная функция
 Запустить вычисление соответствующей кнопкой
 
 Страница 3 — Табуляция и график y
-text
+
 y = ax³ + cos²(x³ - b)
 Алгоритм работы:
 
